@@ -10,7 +10,7 @@ const App = (props) => {
 };
 
 App.propTypes = {
-  filmTitles: PropTypes.array,
+  filmTitles: PropTypes.arrayOf(PropTypes.string),
 };
 
 export default App;

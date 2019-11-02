@@ -124,7 +124,7 @@ const Main = (props) => {
 };
 
 Main.propTypes = {
-  filmTitles: PropTypes.array,
+  filmTitles: PropTypes.arrayOf(PropTypes.string),
 };
 
 export default Main;

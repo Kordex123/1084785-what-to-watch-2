@@ -34,7 +34,7 @@ const MovieCard = ({filmTitles}) => {
 };
 
 MovieCard.propTypes = {
-  filmTitles: PropTypes.array,
+  filmTitles: PropTypes.arrayOf(PropTypes.string),
 };
 
 export default MovieCard;
