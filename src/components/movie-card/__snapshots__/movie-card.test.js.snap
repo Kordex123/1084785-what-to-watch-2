@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieCard correctly renders after relaunch 1`] = `
+<div
+  className="catalog__movies-list"
+>
+  <article
+    className="small-movie-card catalog__movies-card"
+  >
+    <div
+      className="small-movie-card__image"
+    >
+      <img
+        alt="Lisa has a hedgehog"
+        height="175"
+        src="img/Lisa-has-a-hedgehog.jpg"
+        width="280"
+      />
+    </div>
+    <h3
+      className="small-movie-card__title"
+    >
+      <a
+        className="small-movie-card__link"
+        href="movie-page.html"
+      >
+        Lisa has a hedgehog
+      </a>
+    </h3>
+  </article>
+  <article
+    className="small-movie-card catalog__movies-card"
+  >
+    <div
+      className="small-movie-card__image"
+    >
+      <img
+        alt="Pavel has a hamster"
+        height="175"
+        src="img/Pavel-has-a-hamster.jpg"
+        width="280"
+      />
+    </div>
+    <h3
+      className="small-movie-card__title"
+    >
+      <a
+        className="small-movie-card__link"
+        href="movie-page.html"
+      >
+        Pavel has a hamster
+      </a>
+    </h3>
+  </article>
+</div>
+`;

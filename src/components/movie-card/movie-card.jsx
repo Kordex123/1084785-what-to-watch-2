@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const MovieCard = ({filmTitles}) => {
+const MovieCard = ({filmTitles, onClick}) => {
   let a = 61;
   const cards = filmTitles.map((filmTitle) => {
     a += 1;
@@ -20,8 +20,9 @@ const MovieCard = ({filmTitles}) => {
         <h3 className="small-movie-card__title">
           <a
             className="small-movie-card__link"
-            href="movie-page.html">
-            {filmTitle}</a>
+            href="movie-page.html" onClick={onClick}>
+            {filmTitle}
+          </a>
         </h3>
       </article>
     );
@@ -35,6 +36,7 @@ const MovieCard = ({filmTitles}) => {
 
 MovieCard.propTypes = {
   filmTitles: PropTypes.arrayOf(PropTypes.string),
+  onClick: PropTypes.func,
 };
 
 export default MovieCard;
