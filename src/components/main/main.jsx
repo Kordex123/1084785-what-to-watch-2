@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import MovieCard from '../movie-card/movie-card.jsx';
+import MovieCardList from "../movie-card-list/movie-card-list.jsx";
 
 const Main = (props) => {
-  const {filmTitles} = props;
+  const {filmsInformation} = props;
   return (
     <div>
       <section className="movie-card">
@@ -99,7 +99,7 @@ const Main = (props) => {
             </li>
           </ul>
 
-          <MovieCard filmTitles={filmTitles}/>
+          <MovieCardList filmsInformation={filmsInformation} />
 
           <div className="catalog__more">
             <button className="catalog__button" type="button">Show more</button>
@@ -124,7 +124,7 @@ const Main = (props) => {
 };
 
 Main.propTypes = {
-  filmTitles: PropTypes.arrayOf(PropTypes.string),
+  filmsInformation: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default Main;

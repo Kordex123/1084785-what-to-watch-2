@@ -1,56 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`MovieCard correctly renders after relaunch 1`] = `
-<div
-  className="catalog__movies-list"
+<article
+  className="small-movie-card catalog__movies-card"
+  onMouseOver={[Function]}
 >
-  <article
-    className="small-movie-card catalog__movies-card"
+  <div
+    className="small-movie-card__image"
   >
-    <div
-      className="small-movie-card__image"
-    >
-      <img
-        alt="Lisa has a hedgehog"
-        height="175"
-        src="img/Lisa-has-a-hedgehog.jpg"
-        width="280"
-      />
-    </div>
-    <h3
-      className="small-movie-card__title"
-    >
-      <a
-        className="small-movie-card__link"
-        href="movie-page.html"
-      >
-        Lisa has a hedgehog
-      </a>
-    </h3>
-  </article>
-  <article
-    className="small-movie-card catalog__movies-card"
+    <img
+      alt="Aviator"
+      height="175"
+      src="img/aviator.jpg"
+      width="280"
+    />
+  </div>
+  <h3
+    className="small-movie-card__title"
   >
-    <div
-      className="small-movie-card__image"
+    <a
+      className="small-movie-card__link"
+      href="movie-page.html"
     >
-      <img
-        alt="Pavel has a hamster"
-        height="175"
-        src="img/Pavel-has-a-hamster.jpg"
-        width="280"
-      />
-    </div>
-    <h3
-      className="small-movie-card__title"
-    >
-      <a
-        className="small-movie-card__link"
-        href="movie-page.html"
-      >
-        Pavel has a hamster
-      </a>
-    </h3>
-  </article>
-</div>
+      Aviator
+    </a>
+  </h3>
+</article>
 `;

@@ -1,42 +1,36 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const MovieCard = ({filmTitles, onClick}) => {
-  let a = 61;
-  const cards = filmTitles.map((filmTitle) => {
-    a += 1;
-    const id = `\\x${a}`;
-    const imageName = filmTitle.replace(/:/g, ``).replace(/ /g, `-`);
-    return (
-      <article key={id}
-        className="small-movie-card catalog__movies-card">
-        <div className="small-movie-card__image">
-          <img
-            src={`img/${imageName}.jpg`}
-            alt={`${filmTitle}`}
-            width="280"
-            height="175"/>
-        </div>
-        <h3 className="small-movie-card__title">
-          <a
-            className="small-movie-card__link"
-            href="movie-page.html" onClick={onClick}>
-            {filmTitle}
-          </a>
-        </h3>
-      </article>
-    );
-  });
+const MovieCard = ({film, onHoverPreviewMoviePlay}) => {
   return (
-    <div className="catalog__movies-list">
-      {cards}
-    </div>
+    <article key={film.id}
+      className="small-movie-card catalog__movies-card"
+      onMouseOver={() => onHoverPreviewMoviePlay(film)}>
+      <div className="small-movie-card__image">
+        <img
+          src={`img/${film.previewMovieImage}`}
+          alt={`${film.movieTitle}`}
+          width="280"
+          height="175"/>
+      </div>
+      <h3 className="small-movie-card__title">
+        <a
+          className="small-movie-card__link"
+          href="movie-page.html">
+          {film.movieTitle}
+        </a>
+      </h3>
+    </article>
   );
 };
 
 MovieCard.propTypes = {
-  filmTitles: PropTypes.arrayOf(PropTypes.string),
-  onClick: PropTypes.func,
+  film: PropTypes.shape({
+    id: PropTypes.number,
+    movieTitle: PropTypes.string,
+    previewMovieImage: PropTypes.string,
+  }),
+  onHoverPreviewMoviePlay: PropTypes.func,
 };
 
 export default MovieCard;

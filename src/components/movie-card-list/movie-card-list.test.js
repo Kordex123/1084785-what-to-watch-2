@@ -1,13 +1,15 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import App from './app.jsx';
+import MovieCardList from "./movie-card-list";
 import films from "../../mocks/films";
 
-it(`App correctly renders after relaunch`, () => {
+it(`MovieCardList correctly renders after relaunch`, () => {
   const tree = renderer
-    .create(<App
+    .create(<MovieCardList
       filmsInformation={films}
+      onHoverPreviewMoviePlay={() => {}}
     />)
     .toJSON();
+
   expect(tree).toMatchSnapshot();
 });

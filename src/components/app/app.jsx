@@ -3,14 +3,16 @@ import PropTypes from 'prop-types';
 import Main from '../main/main.jsx';
 
 const App = (props) => {
-  const {filmTitles} = props;
+  const {filmsInformation} = props;
   return (
-    <Main filmTitles = {filmTitles} />
+    <Main
+      filmsInformation = {filmsInformation}
+    />
   );
 };
 
 App.propTypes = {
-  filmTitles: PropTypes.arrayOf(PropTypes.string),
+  filmsInformation: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default App;
