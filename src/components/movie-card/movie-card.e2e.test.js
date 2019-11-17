@@ -12,7 +12,7 @@ it(`MovieCard (e2e) is correctly rendered after relaunch`, () => {
   const hoverHandler = jest.fn();
   const movieCard = shallow(<MovieCard
     film={films[4]}
-    onHoverPreviewMoviePlay={hoverHandler}
+    onHover={hoverHandler}
   />);
   // movieCard.find(`a`).at(0).simulate(`click`);
 

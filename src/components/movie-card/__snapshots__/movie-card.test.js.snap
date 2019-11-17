@@ -5,16 +5,19 @@ exports[`MovieCard correctly renders after relaunch 1`] = `
   className="small-movie-card catalog__movies-card"
   onMouseOver={[Function]}
 >
-  <div
-    className="small-movie-card__image"
+  <video
+    className="player__video"
+    muted="muted"
+    onMouseLeave={[Function]}
+    onMouseOver={[Function]}
+    poster="img/aviator.jpg"
+    type="video/mp4"
   >
-    <img
-      alt="Aviator"
-      height="175"
-      src="img/aviator.jpg"
-      width="280"
+    <source
+      src="https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/360/Big_Buck_Bunny_360_10s_1MB.mp4
+"
     />
-  </div>
+  </video>
   <h3
     className="small-movie-card__title"
   >

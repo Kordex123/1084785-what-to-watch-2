@@ -1,13 +1,12 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import MovieCard from "./movie-card.jsx";
+import VideoPlayer from "./video-player";
 import films from "../../mocks/films";
 
-it(`MovieCard correctly renders after relaunch`, () => {
+it(`VideoPlayer correctly renders after relaunch`, () => {
   const tree = renderer
-    .create(<MovieCard
+    .create(<VideoPlayer
       film={films[3]}
-      onHover={() => {}}
     />)
     .toJSON();
 

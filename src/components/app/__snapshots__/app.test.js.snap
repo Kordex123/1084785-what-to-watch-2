@@ -25,7 +25,7 @@ exports[`App correctly renders after relaunch 1`] = `
         className="logo"
       >
         <a
-          className="logo__link"
+          className="logo__link "
         >
           <span
             className="logo__letter logo__letter--1"
@@ -257,21 +257,22 @@ exports[`App correctly renders after relaunch 1`] = `
       <div
         className="catalog__movies-list"
       >
-        <div />
         <article
           className="small-movie-card catalog__movies-card"
           onMouseOver={[Function]}
         >
-          <div
-            className="small-movie-card__image"
+          <video
+            className="player__video"
+            muted="muted"
+            onMouseLeave={[Function]}
+            onMouseOver={[Function]}
+            poster="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
+            type="video/mp4"
           >
-            <img
-              alt="Fantastic Beasts: The Crimes of Grindelwald"
-              height="175"
-              src="img/fantastic-beasts-the-crimes-of-grindelwald.jpg"
-              width="280"
+            <source
+              src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4"
             />
-          </div>
+          </video>
           <h3
             className="small-movie-card__title"
           >
@@ -287,16 +288,18 @@ exports[`App correctly renders after relaunch 1`] = `
           className="small-movie-card catalog__movies-card"
           onMouseOver={[Function]}
         >
-          <div
-            className="small-movie-card__image"
+          <video
+            className="player__video"
+            muted="muted"
+            onMouseLeave={[Function]}
+            onMouseOver={[Function]}
+            poster="img/bohemian-rhapsody.jpg"
+            type="video/mp4"
           >
-            <img
-              alt="Bohemian Rhapsody"
-              height="175"
-              src="img/bohemian-rhapsody.jpg"
-              width="280"
+            <source
+              src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"
             />
-          </div>
+          </video>
           <h3
             className="small-movie-card__title"
           >
@@ -312,16 +315,18 @@ exports[`App correctly renders after relaunch 1`] = `
           className="small-movie-card catalog__movies-card"
           onMouseOver={[Function]}
         >
-          <div
-            className="small-movie-card__image"
+          <video
+            className="player__video"
+            muted="muted"
+            onMouseLeave={[Function]}
+            onMouseOver={[Function]}
+            poster="img/macbeth.jpg"
+            type="video/mp4"
           >
-            <img
-              alt="Macbeth"
-              height="175"
-              src="img/macbeth.jpg"
-              width="280"
+            <source
+              src="https://file-examples.com/wp-content/uploads/2017/04/file_example_MP4_640_3MG.mp4"
             />
-          </div>
+          </video>
           <h3
             className="small-movie-card__title"
           >
@@ -337,16 +342,19 @@ exports[`App correctly renders after relaunch 1`] = `
           className="small-movie-card catalog__movies-card"
           onMouseOver={[Function]}
         >
-          <div
-            className="small-movie-card__image"
+          <video
+            className="player__video"
+            muted="muted"
+            onMouseLeave={[Function]}
+            onMouseOver={[Function]}
+            poster="img/aviator.jpg"
+            type="video/mp4"
           >
-            <img
-              alt="Aviator"
-              height="175"
-              src="img/aviator.jpg"
-              width="280"
+            <source
+              src="https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/360/Big_Buck_Bunny_360_10s_1MB.mp4
+"
             />
-          </div>
+          </video>
           <h3
             className="small-movie-card__title"
           >
@@ -362,16 +370,18 @@ exports[`App correctly renders after relaunch 1`] = `
           className="small-movie-card catalog__movies-card"
           onMouseOver={[Function]}
         >
-          <div
-            className="small-movie-card__image"
+          <video
+            className="player__video"
+            muted="muted"
+            onMouseLeave={[Function]}
+            onMouseOver={[Function]}
+            poster="img/pulp-fiction.jpg"
+            type="video/mp4"
           >
-            <img
-              alt="Pulp Fiction"
-              height="175"
-              src="img/pulp-fiction.jpg"
-              width="280"
+            <source
+              src="https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4"
             />
-          </div>
+          </video>
           <h3
             className="small-movie-card__title"
           >

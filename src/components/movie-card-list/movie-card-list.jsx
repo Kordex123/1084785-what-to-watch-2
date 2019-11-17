@@ -26,13 +26,13 @@ export default class MovieCardList extends PureComponent {
       return (
         <MovieCard key={film.id}
           film = {film}
-          onHoverPreviewMoviePlay={this.onPreviewMoviePlay}/>
+          onHover={this.onPreviewMoviePlay}/>
       );
     });
 
     return (
       <div className="catalog__movies-list">
-        <div>{this.state.activeCard && this.state.activeCard.movieTitle}</div>
+        { /* <div>{this.state.activeCard && this.state.activeCard.movieTitle}</div> */ }
         {films}
       </div>
     );
