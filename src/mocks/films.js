@@ -4,35 +4,36 @@ const films = [
     genre: `Comedies`,
     movieTitle: `Fantastic Beasts: The Crimes of Grindelwald`,
     previewMovieImage: `fantastic-beasts-the-crimes-of-grindelwald.jpg`,
-    // previewVideoLink: `https://www.youtube.com/watch?v=0ZyHChORPkE`,
+    previewVideoLink: `http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4`,
   },
   {
     id: 20222,
     genre: `Comedies`,
     movieTitle: `Bohemian Rhapsody`,
     previewMovieImage: `bohemian-rhapsody.jpg`,
-    // previewVideoLink: `https://www.youtube.com/watch?v=6S9c5nnDd_s`,
+    previewVideoLink: `http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4`,
   },
   {
     id: 30333,
     genre: `Documentary`,
     movieTitle: `Macbeth`,
     previewMovieImage: `macbeth.jpg`,
-    // previewVideoLink: `https://www.youtube.com/watch?v=RgH_OnrYlCk`,
+    previewVideoLink: `https://file-examples.com/wp-content/uploads/2017/04/file_example_MP4_640_3MG.mp4`,
   },
   {
     id: 40444,
     genre: `Romance`,
     movieTitle: `Aviator`,
     previewMovieImage: `aviator.jpg`,
-    // previewVideoLink: `https://www.youtube.com/watch?v=Zek3mNKDSjc`,
+    previewVideoLink: `https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/360/Big_Buck_Bunny_360_10s_1MB.mp4
+`,
   },
   {
     id: 50555,
     genre: `Romance`,
     movieTitle: `Pulp Fiction`,
     previewMovieImage: `pulp-fiction.jpg`,
-    // previewVideoLink: `https://www.youtube.com/watch?v=Zek3mNKDSjc`,
+    previewVideoLink: `https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4`,
   },
 ];
 
