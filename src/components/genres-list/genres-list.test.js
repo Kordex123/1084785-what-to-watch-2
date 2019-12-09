@@ -1,11 +1,10 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import configureStore from 'redux-mock-store';
-import App from './app.jsx';
-import {Provider} from "react-redux";
+import GenresList from "./genres-list.jsx";
+import {Provider} from 'react-redux';
 
-
-it(`App correctly renders after relaunch`, () => {
+it(`GenreList correctly renders after relaunch`, () => {
   const mockStore = configureStore([]);
   let store = mockStore({
     genre: null,
@@ -14,10 +13,9 @@ it(`App correctly renders after relaunch`, () => {
   const tree = renderer
     .create(
         <Provider store={store}>
-          <App/>
+          <GenresList />
         </Provider>)
     .toJSON();
+
   expect(tree).toMatchSnapshot();
 });
-
-
