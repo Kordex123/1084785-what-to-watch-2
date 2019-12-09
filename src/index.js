@@ -1,7 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Provider} from 'react-redux';
 import App from './components/app/app.jsx';
 import films from "./mocks/films";
+import {createStore} from "redux";
+import {reducer} from "./reducer/reducer";
+import {ActionCreator} from "./reducer/reducer";
 
 const init = (filmsInformation) => {
   // const filmTitles = [
@@ -26,9 +30,16 @@ const init = (filmsInformation) => {
   //   `Mindhunter`,
   //   `Midnight Special`,
   // ];
+  const store = createStore(
+      reducer,
+      window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : (f) => f
+  );
 
-  ReactDOM.render(<App
-    filmsInformation={filmsInformation} />, document.getElementById(`root`));
+  store.dispatch(ActionCreator.loadMovies(filmsInformation));
+  ReactDOM.render(<Provider store={store}>
+    <App/>
+  </Provider>,
+  document.getElementById(`root`));
 };
 
 init(films);

@@ -1,18 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Main from '../main/main.jsx';
 
-const App = (props) => {
-  const {filmsInformation} = props;
+const App = () => {
   return (
-    <Main
-      filmsInformation = {filmsInformation}
-    />
+    <Main/>
   );
-};
-
-App.propTypes = {
-  filmsInformation: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default App;

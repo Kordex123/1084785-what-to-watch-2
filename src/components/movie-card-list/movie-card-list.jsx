@@ -1,8 +1,9 @@
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 import MovieCard from "../movie-card/movie-card.jsx";
+import {connect} from "react-redux";
 
-export default class MovieCardList extends PureComponent {
+class MovieCardList extends PureComponent {
   constructor(props) {
     super(props);
 
@@ -43,4 +44,8 @@ MovieCardList.propTypes = {
   filmsInformation: PropTypes.arrayOf(PropTypes.object)
 };
 
+const mapStateToProps = (state) => ({
+  filmsInformation: state.movieCards.filter((movieCard) => state.genre === null || movieCard.genre === state.genre)
+});
 
+export default connect(mapStateToProps)(MovieCardList);
