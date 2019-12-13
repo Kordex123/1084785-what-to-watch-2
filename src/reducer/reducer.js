@@ -1,6 +1,6 @@
 // import React from 'react';
 const initialState = {
-  genre: null,
+  genre: `All genres`,
   movieCards: [],
 };
 

@@ -8,8 +8,10 @@ configure({adapter: new Adapter()});
 
 it(`VideoPlayer (e2e) is correctly rendered after relaunch`, () => {
 
+  const onHover = jest.fn();
   const videoPlayer = shallow(<VideoPlayer
     film={films[4]}
+    onHover={onHover}
   />);
 
   const video = videoPlayer.find(`.player__video`);
@@ -25,15 +27,23 @@ it(`VideoPlayer (e2e) is correctly rendered after relaunch`, () => {
   };
 
   jest.useFakeTimers();
-  const spyTestPlay = jest.spyOn(videoPlayer.instance()._previewVideoRef.current, `play`);
   video.simulate(`mouseover`);
   jest.runAllTimers();
-  expect(spyTestPlay).toBeCalledTimes(1);
+  expect(onHover).toBeCalledTimes(1);
+
+  // reset onHover's toBeCalledTimes counter
+  jest.clearAllMocks();
 
   jest.useFakeTimers();
-  const spyTestLoad = jest.spyOn(videoPlayer.instance()._previewVideoRef.current, `load`);
   video.simulate(`mouseleave`);
   jest.runAllTimers();
-  expect(spyTestLoad).toBeCalledTimes(1);
+  expect(onHover).toBeCalledTimes(1);
 
+  const spyTestPlay = jest.spyOn(videoPlayer.instance()._previewVideoRef.current, `play`);
+  videoPlayer.setProps({isPlaying: true});
+  expect(spyTestPlay).toBeCalledTimes(1);
+
+  const spyTestLoad = jest.spyOn(videoPlayer.instance()._previewVideoRef.current, `load`);
+  videoPlayer.setProps({isPlaying: false});
+  expect(spyTestLoad).toBeCalledTimes(1);
 });

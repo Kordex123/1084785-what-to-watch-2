@@ -7,23 +7,15 @@ export default class VideoPlayer extends PureComponent {
     this._previewVideoRef = React.createRef();
     this.timeout = null;
 
-    this.state = {
-      isPlaying: false,
-    };
-
     this._onPlayPreviewMovie = () => {
       this.timeout = setTimeout(() => {
-        this.setState({
-          isPlaying: true,
-        });
+        props.onHover(this.props.film.id);
       }, 1000);
     };
 
     this._onStopPreviewMovie = () => {
       clearTimeout(this.timeout);
-      this.setState({
-        isPlaying: false,
-      });
+      props.onHover(null);
     };
   }
 
@@ -48,7 +40,7 @@ export default class VideoPlayer extends PureComponent {
   componentDidUpdate() {
     const video = this._previewVideoRef.current;
 
-    if (this.state.isPlaying) {
+    if (this.props.isPlaying) {
       video.play();
     } else {
       video.load();
@@ -58,7 +50,10 @@ export default class VideoPlayer extends PureComponent {
 
 VideoPlayer.propTypes = {
   film: PropTypes.shape({
+    id: PropTypes.number,
     previewMovieImage: PropTypes.string.isRequired,
     previewVideoLink: PropTypes.string.isRequired,
-  })
+  }),
+  isPlaying: PropTypes.bool,
+  onHover: PropTypes.func
 };

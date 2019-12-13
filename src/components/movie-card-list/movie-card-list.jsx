@@ -2,31 +2,23 @@ import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 import MovieCard from "../movie-card/movie-card.jsx";
 import {connect} from "react-redux";
+import withActiveItem from "../../hocs/with-active-item/with-active-item";
 
 class MovieCardList extends PureComponent {
   constructor(props) {
     super(props);
 
-    this.state = {
-      activeCard: null,
-    };
-
-    this.onPreviewMoviePlay = (film) => {
-      this.setState(() => {
-        // eslint-disable-next-line no-console
-        console.log(film);
-        return {
-          activeCard: film
-        };
-      });
+    this.onPreviewMoviePlay = (filmId) => {
+      props.onActiveItemChange(filmId);
     };
   }
   render() {
-    const {filmsInformation} = this.props;
+    const {filmsInformation, activeItem} = this.props;
     const films = filmsInformation.map((film) => {
       return (
         <MovieCard key={film.id}
           film = {film}
+          isPlaying={activeItem === film.id}
           onHover={this.onPreviewMoviePlay}/>
       );
     });
@@ -41,11 +33,13 @@ class MovieCardList extends PureComponent {
 }
 
 MovieCardList.propTypes = {
-  filmsInformation: PropTypes.arrayOf(PropTypes.object)
+  filmsInformation: PropTypes.arrayOf(PropTypes.object),
+  onActiveItemChange: PropTypes.func,
+  activeItem: PropTypes.number,
 };
 
 const mapStateToProps = (state) => ({
-  filmsInformation: state.movieCards.filter((movieCard) => state.genre === null || movieCard.genre === state.genre)
+  filmsInformation: state.movieCards.filter((movieCard) => state.genre === `All genres` || movieCard.genre === state.genre)
 });
 
-export default connect(mapStateToProps)(MovieCardList);
+export default connect(mapStateToProps)(withActiveItem(MovieCardList));

@@ -3,7 +3,6 @@
 exports[`MovieCard correctly renders after relaunch 1`] = `
 <article
   className="small-movie-card catalog__movies-card"
-  onMouseOver={[Function]}
 >
   <video
     className="player__video"
