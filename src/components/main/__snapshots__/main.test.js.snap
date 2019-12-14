@@ -168,10 +168,106 @@ exports[`Main correctly renders after relaunch 1`] = `
             All genres
           </a>
         </li>
+        <li
+          className="catalog__genres-item "
+        >
+          <a
+            className="catalog__genres-link"
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
+            Comedies
+          </a>
+        </li>
+        <li
+          className="catalog__genres-item "
+        >
+          <a
+            className="catalog__genres-link"
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
+            Documentary
+          </a>
+        </li>
+        <li
+          className="catalog__genres-item "
+        >
+          <a
+            className="catalog__genres-link"
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
+            Romance
+          </a>
+        </li>
       </ul>
       <div
         className="catalog__movies-list"
-      />
+      >
+        <article
+          className="small-movie-card catalog__movies-card"
+        >
+          <video
+            className="player__video"
+            onMouseLeave={[Function]}
+            onMouseOver={[Function]}
+            poster="fantastic-beasts-the-crimes-of-grindelwald.jpg"
+            type="video/mp4"
+          >
+            <source
+              src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4"
+            />
+          </video>
+          <h3
+            className="small-movie-card__title"
+          >
+            <a
+              className="small-movie-card__link"
+              href="movie-page.html"
+            >
+              Fantastic Beasts: The Crimes of Grindelwald
+            </a>
+          </h3>
+        </article>
+        <article
+          className="small-movie-card catalog__movies-card"
+        >
+          <video
+            className="player__video"
+            onMouseLeave={[Function]}
+            onMouseOver={[Function]}
+            poster="bohemian-rhapsody.jpg"
+            type="video/mp4"
+          >
+            <source
+              src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"
+            />
+          </video>
+          <h3
+            className="small-movie-card__title"
+          >
+            <a
+              className="small-movie-card__link"
+              href="movie-page.html"
+            >
+              Bohemian Rhapsody
+            </a>
+          </h3>
+        </article>
+      </div>
       <div
         className="catalog__more"
       >

@@ -1,8 +1,9 @@
 import React from 'react';
 import {connect} from "react-redux";
-import {ActionCreator} from '../../reducer/reducer';
+import {ActionCreator} from '../../reducer/genres-reducer/genres-reducer';
 import PropTypes from "prop-types";
 import withActiveItem from "../../hocs/with-active-item/with-active-item";
+import Namespace from "../../reducer/namespace";
 
 const GenresList = (props) => {
 
@@ -38,7 +39,7 @@ GenresList.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  genres: Array.from(new Set(state.movieCards.map((movieCard) => movieCard.genre)))
+  genres: Array.from(new Set(state[Namespace.MOVIE].movieCards.map((movieCard) => movieCard.genre)))
 });
 
 const mapDispatchToProps = (dispatch) => ({

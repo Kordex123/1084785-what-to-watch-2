@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import MovieCard from "../movie-card/movie-card.jsx";
 import {connect} from "react-redux";
 import withActiveItem from "../../hocs/with-active-item/with-active-item";
+import Namespace from "../../reducer/namespace";
 
 class MovieCardList extends PureComponent {
   constructor(props) {
@@ -39,7 +40,8 @@ MovieCardList.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  filmsInformation: state.movieCards.filter((movieCard) => state.genre === `All genres` || movieCard.genre === state.genre)
+  filmsInformation: state[Namespace.MOVIE].movieCards.filter((movieCard) =>
+    state[Namespace.GENRE].genre === `All genres` || movieCard.genre === state[Namespace.GENRE].genre)
 });
 
 export default connect(mapStateToProps)(withActiveItem(MovieCardList));
