@@ -28,9 +28,8 @@ export default class VideoPlayer extends PureComponent {
           onMouseLeave={this._onStopPreviewMovie}
           className="player__video"
           ref={this._previewVideoRef}
-          poster={`img/${previewMovieImage}`}
           type = "video/mp4"
-          muted="muted">
+          poster={previewMovieImage}>
           <source src={previewVideoLink}/>
         </video>
       </React.Fragment>
@@ -39,6 +38,7 @@ export default class VideoPlayer extends PureComponent {
 
   componentDidUpdate() {
     const video = this._previewVideoRef.current;
+    video.muted = true;
 
     if (this.props.isPlaying) {
       video.play();
@@ -51,8 +51,8 @@ export default class VideoPlayer extends PureComponent {
 VideoPlayer.propTypes = {
   film: PropTypes.shape({
     id: PropTypes.number,
-    previewMovieImage: PropTypes.string.isRequired,
-    previewVideoLink: PropTypes.string.isRequired,
+    previewMovieImage: PropTypes.string,
+    previewVideoLink: PropTypes.string,
   }),
   isPlaying: PropTypes.bool,
   onHover: PropTypes.func

@@ -5,14 +5,16 @@ import Adapter from 'enzyme-adapter-react-16';
 import GenresList from "./genres-list";
 import configureStore from "redux-mock-store";
 import films from "../../mocks/films";
+import Namespace from "../../reducer/namespace";
 
 configure({adapter: new Adapter()});
 
 it(`GenreList (e2e) is correctly rendered after relaunch`, () => {
   const mockStore = configureStore([]);
   let store = mockStore({
-    genre: null,
-    movieCards: films,
+    [Namespace.MOVIE]: {
+      movieCards: films
+    }
   });
 
   const component = mount(

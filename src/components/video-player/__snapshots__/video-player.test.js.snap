@@ -3,10 +3,9 @@
 exports[`VideoPlayer correctly renders after relaunch 1`] = `
 <video
   className="player__video"
-  muted="muted"
   onMouseLeave={[Function]}
   onMouseOver={[Function]}
-  poster="img/aviator.jpg"
+  poster="aviator.jpg"
   type="video/mp4"
 >
   <source
