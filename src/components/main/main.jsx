@@ -2,6 +2,7 @@ import React from 'react';
 import MovieCardList from "../movie-card-list/movie-card-list.jsx";
 import PageLogo from "../page-logo/page-logo.jsx";
 import GenresList from "../genres-list/genres-list.jsx";
+import {Link} from "react-router-dom";
 
 const Main = () => {
 
@@ -18,9 +19,11 @@ const Main = () => {
           <PageLogo />
 
           <div className="user-block">
-            <div className="user-block__avatar">
-              <img src="img/avatar.jpg" alt="User avatar" width="63" height="63"/>
-            </div>
+            <Link to={`/login`}>
+              <div className="user-block__avatar">
+                <img src="img/avatar.jpg" alt="User avatar" width="63" height="63"/>
+              </div>
+            </Link>
           </div>
         </header>
 

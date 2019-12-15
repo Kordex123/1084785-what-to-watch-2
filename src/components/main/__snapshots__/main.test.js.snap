@@ -47,16 +47,21 @@ exports[`Main correctly renders after relaunch 1`] = `
       <div
         className="user-block"
       >
-        <div
-          className="user-block__avatar"
+        <a
+          href="/login"
+          onClick={[Function]}
         >
-          <img
-            alt="User avatar"
-            height="63"
-            src="img/avatar.jpg"
-            width="63"
-          />
-        </div>
+          <div
+            className="user-block__avatar"
+          >
+            <img
+              alt="User avatar"
+              height="63"
+              src="img/avatar.jpg"
+              width="63"
+            />
+          </div>
+        </a>
       </div>
     </header>
     <div
@@ -220,23 +225,33 @@ exports[`Main correctly renders after relaunch 1`] = `
         <article
           className="small-movie-card catalog__movies-card"
         >
-          <video
-            className="player__video"
-            onMouseLeave={[Function]}
-            onMouseOver={[Function]}
-            poster="fantastic-beasts-the-crimes-of-grindelwald.jpg"
-            type="video/mp4"
+          <a
+            href="/films/10111"
+            onClick={[Function]}
           >
-            <source
-              src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4"
-            />
-          </video>
+            <div
+              className="small-movie-card__image"
+            >
+              <video
+                className="player__video"
+                onMouseLeave={[Function]}
+                onMouseOver={[Function]}
+                poster="fantastic-beasts-the-crimes-of-grindelwald.jpg"
+                type="video/mp4"
+              >
+                <source
+                  src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4"
+                />
+              </video>
+            </div>
+          </a>
           <h3
             className="small-movie-card__title"
           >
             <a
               className="small-movie-card__link"
-              href="movie-page.html"
+              href="/films/10111"
+              onClick={[Function]}
             >
               Fantastic Beasts: The Crimes of Grindelwald
             </a>
@@ -245,23 +260,33 @@ exports[`Main correctly renders after relaunch 1`] = `
         <article
           className="small-movie-card catalog__movies-card"
         >
-          <video
-            className="player__video"
-            onMouseLeave={[Function]}
-            onMouseOver={[Function]}
-            poster="bohemian-rhapsody.jpg"
-            type="video/mp4"
+          <a
+            href="/films/20222"
+            onClick={[Function]}
           >
-            <source
-              src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"
-            />
-          </video>
+            <div
+              className="small-movie-card__image"
+            >
+              <video
+                className="player__video"
+                onMouseLeave={[Function]}
+                onMouseOver={[Function]}
+                poster="bohemian-rhapsody.jpg"
+                type="video/mp4"
+              >
+                <source
+                  src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4"
+                />
+              </video>
+            </div>
+          </a>
           <h3
             className="small-movie-card__title"
           >
             <a
               className="small-movie-card__link"
-              href="movie-page.html"
+              href="/films/20222"
+              onClick={[Function]}
             >
               Bohemian Rhapsody
             </a>

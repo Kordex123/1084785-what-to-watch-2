@@ -9,6 +9,7 @@ import thunk from "redux-thunk";
 import {compose} from "recompose";
 import {applyMiddleware} from "redux";
 import {configureAPI} from "./api";
+import {BrowserRouter} from "react-router-dom";
 
 
 const init = () => {
@@ -23,10 +24,13 @@ const init = () => {
   );
 
   store.dispatch(Operation.loadMovies());
-  ReactDOM.render(<Provider store={store}>
-    <App/>
-  </Provider>,
-  document.getElementById(`root`));
+  ReactDOM.render(
+      <BrowserRouter>
+        <Provider store={store}>
+          <App/>
+        </Provider>
+      </BrowserRouter>,
+      document.getElementById(`root`));
 };
 
 init();

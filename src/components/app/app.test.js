@@ -5,6 +5,7 @@ import App from './app.jsx';
 import {Provider} from "react-redux";
 import Namespace from "../../reducer/namespace";
 import films from "../../mocks/films";
+import {BrowserRouter} from "react-router-dom";
 
 
 it(`App correctly renders after relaunch`, () => {
@@ -20,7 +21,9 @@ it(`App correctly renders after relaunch`, () => {
   const tree = renderer
     .create(
         <Provider store={store}>
-          <App/>
+          <BrowserRouter>
+            <App/>
+          </BrowserRouter>
         </Provider>)
     .toJSON();
   expect(tree).toMatchSnapshot();

@@ -9,8 +9,8 @@ class MovieCardList extends PureComponent {
   constructor(props) {
     super(props);
 
-    this.onPreviewMoviePlay = (filmId) => {
-      props.onActiveItemChange(filmId);
+    this.onPreviewMoviePlay = (film) => {
+      props.onActiveItemChange(film);
     };
   }
   render() {
@@ -19,7 +19,7 @@ class MovieCardList extends PureComponent {
       return (
         <MovieCard key={film.id}
           film = {film}
-          isPlaying={activeItem === film.id}
+          isPlaying={activeItem && activeItem.id === film.id}
           onHover={this.onPreviewMoviePlay}/>
       );
     });
@@ -36,7 +36,7 @@ class MovieCardList extends PureComponent {
 MovieCardList.propTypes = {
   filmsInformation: PropTypes.arrayOf(PropTypes.object),
   onActiveItemChange: PropTypes.func,
-  activeItem: PropTypes.number,
+  activeItem: PropTypes.object,
 };
 
 const mapStateToProps = (state) => ({

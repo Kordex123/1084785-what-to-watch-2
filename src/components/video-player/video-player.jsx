@@ -9,7 +9,7 @@ export default class VideoPlayer extends PureComponent {
 
     this._onPlayPreviewMovie = () => {
       this.timeout = setTimeout(() => {
-        props.onHover(this.props.film.id);
+        props.onHover(this.props.film);
       }, 1000);
     };
 
