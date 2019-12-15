@@ -2,6 +2,7 @@ const films = [
   {
     id: 10111,
     genre: `Comedies`,
+    starring: [],
     movieTitle: `Fantastic Beasts: The Crimes of Grindelwald`,
     previewMovieImage: `fantastic-beasts-the-crimes-of-grindelwald.jpg`,
     previewVideoLink: `http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerMeltdowns.mp4`,

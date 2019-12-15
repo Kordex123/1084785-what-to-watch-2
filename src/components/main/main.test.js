@@ -5,6 +5,7 @@ import Main from "./main.jsx";
 import {Provider} from 'react-redux';
 import Namespace from "../../reducer/namespace";
 import films from "../../mocks/films";
+import {BrowserRouter} from "react-router-dom";
 
 it(`Main correctly renders after relaunch`, () => {
   const mockStore = configureStore([]);
@@ -19,7 +20,9 @@ it(`Main correctly renders after relaunch`, () => {
   const tree = renderer
     .create(
         <Provider store={store}>
-          <Main />
+          <BrowserRouter>
+            <Main />
+          </BrowserRouter>
         </Provider>)
     .toJSON();
 

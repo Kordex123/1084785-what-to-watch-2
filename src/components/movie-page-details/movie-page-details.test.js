@@ -1,31 +1,24 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import {Provider} from 'react-redux';
-import MovieCardList from "./movie-card-list";
 import films from "../../mocks/films";
 import configureStore from "redux-mock-store";
 import Namespace from "../../reducer/namespace";
-import {BrowserRouter} from "react-router-dom";
+import MoviePageDetails from "./movie-page-details.jsx";
 
-it(`MovieCardList correctly renders after relaunch`, () => {
+it(`MoviePageDetails correctly renders after relaunch`, () => {
 
   const mockStore = configureStore([]);
   let store = mockStore({
     [Namespace.MOVIE]: {
       movieCards: films,
-    },
-    [Namespace.GENRE]: {
-      genre: films[0].genre,
     }
   });
 
-  const onHover = jest.fn();
   const tree = renderer
     .create(
         <Provider store={store}>
-          <BrowserRouter>
-            <MovieCardList onHover={onHover}/>
-          </BrowserRouter>
+          <MoviePageDetails match={{params: {id: 10111}}} />
         </Provider>)
     .toJSON();
 

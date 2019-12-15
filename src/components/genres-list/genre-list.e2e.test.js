@@ -24,7 +24,7 @@ it(`GenreList (e2e) is correctly rendered after relaunch`, () => {
   );
   component.find(`li a`).at(2).simulate(`click`);
   // eslint-disable-next-line no-console
-  console.log(component.debug());
+  // console.log(component.debug());
 
   expect(component.find(`li`).at(0).hasClass(`catalog__genres-item--active`)).toBeFalsy();
   expect(component.find(`li`).at(2).hasClass(`catalog__genres-item--active`)).toBeTruthy();
