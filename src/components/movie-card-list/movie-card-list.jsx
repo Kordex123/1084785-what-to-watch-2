@@ -14,8 +14,8 @@ class MovieCardList extends PureComponent {
     };
   }
   render() {
-    const {filmsInformation, activeItem} = this.props;
-    const films = filmsInformation.map((film) => {
+    const {filmsInformation, activeItem, limit} = this.props;
+    const films = filmsInformation.slice(0, limit || filmsInformation.length).map((film) => {
       return (
         <MovieCard key={film.id}
           film = {film}
@@ -26,7 +26,6 @@ class MovieCardList extends PureComponent {
 
     return (
       <div className="catalog__movies-list">
-        { /* <div>{this.state.activeCard && this.state.activeCard.movieTitle}</div> */ }
         {films}
       </div>
     );
@@ -37,6 +36,7 @@ MovieCardList.propTypes = {
   filmsInformation: PropTypes.arrayOf(PropTypes.object),
   onActiveItemChange: PropTypes.func,
   activeItem: PropTypes.object,
+  limit: PropTypes.number
 };
 
 const mapStateToProps = (state) => ({

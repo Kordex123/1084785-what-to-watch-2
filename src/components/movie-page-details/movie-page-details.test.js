@@ -18,7 +18,7 @@ it(`MoviePageDetails correctly renders after relaunch`, () => {
   const tree = renderer
     .create(
         <Provider store={store}>
-          <MoviePageDetails match={{params: {id: 10111}}} />
+          <MoviePageDetails filmId={10111} />
         </Provider>)
     .toJSON();
 

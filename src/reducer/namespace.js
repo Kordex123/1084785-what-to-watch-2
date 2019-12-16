@@ -1,7 +1,8 @@
 const Namespace = {
   MOVIE: `MOVIE`,
   GENRE: `GENRE`,
-  USER: `USER`
+  USER: `USER`,
+  COMMENT: `COMMENT`,
 };
 
 export default Namespace;
